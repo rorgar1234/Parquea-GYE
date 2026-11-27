@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f7f4">
+  <title>Parquea GYE | Encuentra tu espacio</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="auth.css">
+</head>
+<body>
+  <main id="authScreen" class="auth-screen">
+    <div class="auth-brand"><a class="brand" href="#"><span class="brand-mark">P</span><span>parquea<span class="brand-city">gye</span></span></a></div>
+    <section class="auth-card">
+      <div class="auth-visual"><span class="eyebrow">GUAYAQUIL SE MUEVE CONTIGO</span><h1>Tu espacio<br>te espera.</h1><p>Encuentra parqueos cerca de tu destino y reserva con tranquilidad.</p><div class="auth-location">⌖ &nbsp; Parqueos en Guayaquil</div><div class="auth-orbit orbit-one"></div><div class="auth-orbit orbit-two"></div><button class="auth-pin" id="authPin" type="button" aria-label="Arrástrame y suéltame para hacer rebotar la P" title="Arrástrame y suéltame">P</button></div>
+      <div class="auth-form-panel">
+        <div class="auth-tabs"><button class="auth-tab selected" data-auth-tab="register">Crear cuenta</button><button class="auth-tab" data-auth-tab="login">Ya tengo cuenta</button></div>
+        <div id="registerPanel"><span class="eyebrow muted">EMPIEZA EN UN MOMENTO</span><h2>Regístrate para continuar</h2><p class="auth-intro">Tu correo es obligatorio para asociar tus reservas.</p>
+          <form id="registerForm"><label class="auth-field"><span>Tu nombre</span><input name="name" autocomplete="name" placeholder="Ej. Roger Pérez" required minlength="2" pattern="[\p{L}\p{M}]+([ '\u2019-][\p{L}\p{M}]+)*" title="Usa letras, espacios o guiones"></label><label class="auth-field"><span>Nombre de usuario</span><input name="username" autocomplete="username" placeholder="Ej. roger123" required minlength="3" maxlength="20" pattern="[A-Za-z0-9]{3,20}" title="Solo letras y números, de 3 a 20 caracteres"></label><label class="auth-field"><span>Correo electrónico <small>obligatorio</small></span><input name="email" type="email" autocomplete="email" placeholder="tu@correo.com" required></label><label class="auth-field"><span>Contraseña</span><div class="password-wrap"><input id="registerPassword" name="password" type="password" autocomplete="new-password" placeholder="Mínimo 8 caracteres" minlength="8" required><button class="password-toggle" type="button" data-password-target="registerPassword" aria-label="Mostrar contraseña">Mostrar</button></div></label><button class="primary-button auth-submit" type="submit">Crear mi cuenta <span>→</span></button><p class="contact-hint">El usuario puede repetirse; el correo debe ser único. Recibirás avisos de reserva y cancelación por correo.</p></form>
+        </div>
+        <div id="loginPanel" class="hidden"><span class="eyebrow muted">QUÉ BUENO VERTE</span><h2>Ingresa a tu cuenta</h2><p class="auth-intro">Continúa con tus reservas de Parquea GYE.</p>
+          <form id="loginForm"><label class="auth-field"><span>Usuario o correo electrónico</span><input name="contact" autocomplete="username" placeholder="roger123 o tu@correo.com" pattern="[A-Za-z0-9@._+-]+" title="Escribe tu usuario o correo sin caracteres especiales" required></label><label class="auth-field"><span>Contraseña</span><div class="password-wrap"><input id="loginPassword" name="password" type="password" autocomplete="current-password" required><button class="password-toggle" type="button" data-password-target="loginPassword" aria-label="Mostrar contraseña">Mostrar</button></div></label><button class="primary-button auth-submit" type="submit">Ingresar <span>→</span></button></form><button id="forgotPasswordLink" class="forgot-link" type="button">¿Olvidaste tu contraseña?</button>
+        </div>
+        <div id="forgotPanel" class="hidden"><span class="eyebrow muted">RECUPERA TU ACCESO</span><h2>Restablecer contraseña</h2><p class="auth-intro">Escribe el correo de tu cuenta y te enviaremos un enlace seguro para crear una contraseña nueva.</p><form id="passwordResetRequestForm"><label class="auth-field"><span>Correo electrónico</span><input name="email" type="email" autocomplete="email" placeholder="tu@correo.com" required></label><button class="primary-button auth-submit" type="submit">Enviar enlace <span>→</span></button></form><p id="resetRequestNotice" class="reset-request-notice hidden" role="status"></p><button id="backToLogin" class="forgot-link" type="button">← Volver a iniciar sesión</button></div>
+        <p id="authError" class="auth-error hidden" role="alert"></p><p class="auth-privacy">Tu información se usa para guardar tus reservas y preparar notificaciones.</p>
+      </div>
+    </section>
+    <p class="auth-footnote">Prototipo local de demostración · Pagos ficticios · Avisos por correo</p>
+  </main>
+  <div id="appShell" class="hidden">
+  <header class="topbar">
+    <a class="brand" href="#inicio" aria-label="Parquea GYE inicio"><span class="brand-mark">P</span><span>parquea<span class="brand-city">gye</span></span></a>
+    <nav><a class="active" href="#buscar">Encontrar parqueo</a><a href="#como-funciona">Cómo funciona</a></nav>
+    <div class="user-menu"><span id="welcomeName"></span><button class="account-button hidden" id="staffPanelButton" type="button">Panel de equipo</button><button class="account-button" id="myBookings">Mis reservas <span id="bookingCount" class="count">0</span></button><button class="logout-button" id="logoutButton" title="Cerrar sesión">Salir</button></div>
+  </header>
+
+  <main id="inicio">
+    <section class="hero">
+      <div class="hero-copy">
+        <span class="eyebrow"><span class="live-dot"></span> PARQUEOS EN GUAYAQUIL</span>
+        <h1>Tu próximo espacio<br>está <em>aquí.</em></h1>
+        <p>Encuentra un lugar seguro para tu auto, cerca de donde vas. Reserva en pocos pasos y llega tranquilo.</p>
+        <div class="trust-row"><div class="avatar-stack"><span>G</span><span>M</span><span>A</span></div><span>Hecho para moverse por Guayaquil</span></div>
+      </div>
+      <div class="hero-art hero-video-art" aria-label="Video del centro de Guayaquil">
+        <div class="city-video-frame"><button class="video-launch" id="playCityVideo" type="button" aria-label="Reproducir recorrido por el Malecón 2000"><img src="https://img.youtube.com/vi/L5LIACZf0H0/hqdefault.jpg" alt="Vista previa del Malecón 2000 en Guayaquil"><span class="video-play-icon">▶</span><span class="video-play-label">▶ &nbsp; Ver el Malecón 2000</span></button></div>
+        <div class="video-place-tag"><span>⌖</span><span><b>Malecón 2000</b><small>Centro de Guayaquil</small></span></div>
+      </div>
+      <div class="hero-search" id="buscar">
+        <label class="search-field"><span class="field-icon">⌖</span><span class="field-content"><small>¿A dónde vas?</small><select id="areaFilter" aria-label="Filtrar por zona"><option value="">Todas las zonas de Guayaquil</option><option>Centro</option><option>Urdesa</option><option>Kennedy</option><option>Samborondón</option><option>Alborada</option></select></span></label>
+        <label class="search-field"><span class="field-icon">◷</span><span class="field-content"><small>Fecha de llegada</small><input id="arrivalDate" type="date" aria-label="Fecha de llegada"></span></label>
+        <label class="search-field"><span class="field-icon">◉</span><span class="field-content"><small>Tipo de vehículo</small><select id="vehicleFilter" aria-label="Tipo de vehículo"><option value="">Cualquier vehículo</option><option value="Auto">Auto</option><option value="Moto">Moto</option><option value="SUV">SUV</option></select></span></label>
+        <button class="search-button" id="searchButton">Buscar espacios <span>→</span></button>
+      </div>
+    </section>
+
+    <section class="listings-section" id="espacios">
+      <div class="section-heading"><div><span class="eyebrow muted">ESPACIOS CERCA DE TI</span><h2>Encuentra tu parqueo</h2><p class="section-subtitle">Lugares seleccionados para que llegues con tranquilidad.</p></div><div class="view-switch"><button class="view-active">▦ &nbsp; Lista</button><button title="La vista de mapa estará disponible en una próxima etapa">⌖ &nbsp; Mapa</button></div></div>
+      <div class="results-line"><span id="resultCount">Mostrando espacios disponibles</span><button id="sortButton">Precio: menor primero <span>⌄</span></button></div>
+      <div id="parkingGrid" class="parking-grid"></div>
+      <div id="emptyState" class="empty-state hidden"><span>⌖</span><h3>No encontramos espacios en esa zona</h3><p>Prueba con otra zona de Guayaquil.</p><button id="clearFilters">Ver todos los espacios</button></div>
+    </section>
+
+    <section class="how-section" id="como-funciona"><span class="eyebrow muted">ASÍ DE FÁCIL</span><h2>Estacionar sin vueltas.</h2><div class="steps"><article><span>01</span><h3>Encuentra</h3><p>Busca un parqueo cerca de tu destino en Guayaquil.</p></article><article><span>02</span><h3>Reserva</h3><p>Elige el horario y guarda tu espacio en segundos.</p></article><article><span>03</span><h3>Estaciona</h3><p>Llega con tranquilidad. Tu espacio te está esperando.</p></article></div></section>
+  </main>
+
+  <footer><a class="brand" href="#inicio"><span class="brand-mark">P</span><span>parquea<span class="brand-city">gye</span></span></a><span>Moviéndonos mejor por Guayaquil.</span><span>Prototipo de demostración · 2026</span></footer>
+  </div>
+
+  <dialog id="bookingDialog" class="dialog"><form method="dialog" class="dialog-close-form"><button class="close-button" aria-label="Cerrar">×</button></form><div id="dialogContent"></div></dialog>
+  <div id="toast" class="toast" role="status"></div>
+  <script src="app.js"></script>
+</body>
+</html>

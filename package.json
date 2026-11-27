@@ -1,0 +1,9 @@
+{
+  "name": "parquea-guayaquil",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Prototipo local para buscar y reservar parqueos en Guayaquil",
+  "scripts": {
+    "dev": "node server.js"
+  }
+}

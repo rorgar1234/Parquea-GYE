@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f7f4">
+  <title>Restablecer contraseña | Parquea-GYE</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="auth.css">
+  <link rel="stylesheet" href="reset.css">
+</head>
+<body>
+  <main class="reset-page">
+    <div class="reset-brand"><a class="brand" href="/"><span class="brand-mark">P</span><span>parquea<span class="brand-city">gye</span></span></a></div>
+    <section class="reset-card">
+      <div class="reset-mark" aria-hidden="true">P</div>
+      <div id="resetChecking" class="reset-state"><span class="eyebrow">PARQUEA-GYE</span><h1>Revisando tu enlace…</h1><p>Un momento, estamos verificando que siga activo.</p></div>
+      <div id="resetInvalid" class="reset-state hidden"><span class="reset-icon reset-icon-warning">!</span><span class="eyebrow">ENLACE NO DISPONIBLE</span><h1>Solicita uno nuevo</h1><p>Este enlace ya se usó, venció o no es válido. Regresa al inicio e inténtalo otra vez.</p><a class="primary-button reset-link-button" href="/?login=1">Volver a iniciar sesión</a></div>
+      <div id="resetFormPanel" class="hidden"><span class="eyebrow">RECUPERACIÓN SEGURA</span><h1>Crea tu contraseña nueva</h1><p>Elige una contraseña de al menos 8 caracteres para volver a entrar a tu cuenta.</p>
+        <form id="resetPasswordForm">
+          <label class="auth-field"><span>Nueva contraseña</span><div class="password-wrap"><input id="newPassword" name="password" type="password" autocomplete="new-password" minlength="8" required placeholder="Mínimo 8 caracteres"><button class="password-toggle" type="button" data-password-target="newPassword" aria-label="Mostrar contraseña">Mostrar</button></div></label>
+          <label class="auth-field"><span>Confirma la contraseña</span><div class="password-wrap"><input id="confirmNewPassword" name="confirmPassword" type="password" autocomplete="new-password" minlength="8" required placeholder="Escríbela otra vez"><button class="password-toggle" type="button" data-password-target="confirmNewPassword" aria-label="Mostrar contraseña">Mostrar</button></div></label>
+          <p id="resetError" class="auth-error hidden" role="alert"></p>
+          <button class="primary-button auth-submit" type="submit">Guardar contraseña <span>→</span></button>
+        </form>
+        <p class="reset-small-note">Este enlace es de un solo uso y vence en 30 minutos.</p>
+      </div>
+      <div id="resetSuccess" class="reset-state hidden"><span class="reset-icon reset-icon-success">✓</span><span class="eyebrow">TODO LISTO</span><h1>¡Contraseña actualizada!</h1><p>Tu cuenta ya tiene una nueva contraseña. Vuelve a iniciar sesión para continuar.</p><a class="primary-button reset-link-button" href="/?login=1&amp;passwordChanged=1">Iniciar sesión</a><p class="reset-small-note">Te llevaremos al inicio de sesión en un momento…</p></div>
+    </section>
+    <p class="auth-footnote">Recuperación segura · Parquea-GYE · Guayaquil</p>
+  </main>
+  <script src="reset.js"></script>
+</body>
+</html>
